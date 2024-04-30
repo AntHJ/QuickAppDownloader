@@ -6,11 +6,11 @@ visit ```Download.MyHB.dev``` using the Playstation Vita/TV web browser to launc
 * the App Downloader itself Utilises Lua Player Plus Vita (lpp-vita). [Learn more.](https://github.com/Rinnegatamante/lpp-vita)
 -----
 
-![bootstrap-idle](https://github.com/AntHJ/henlo_jb/blob/main/AppDownloader-Image-1.png)
+![bootstrap-idle](https://github.com/AntHJ/QuickAppDownloader/blob/main/IMGs/AppDL-1.png)
 
 -----
 
-![pic-browser-idle](https://github.com/AntHJ/henlo_jb/blob/main/AppDownloader-Image-2.png)
+![pic-browser-idle](https://github.com/AntHJ/QuickAppDownloader/blob/main/IMGs/AppDL-2.png)
 
 -----
 

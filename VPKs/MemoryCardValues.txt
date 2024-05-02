@@ -1,0 +1,22 @@
+--MEMORY.LIST--
+
+SDCapValue01=57		-- Start of genuine 64gb
+SDCapValue02=61		-- End of genine 64gb
+
+SDCapValue03=115	-- Start of genuine 128gb
+SDCapValue04=121	-- End of genuine 128gb
+
+SDCapValue05=181	-- Start of genuine 200gb
+SDCapValue06=188	-- End of genuine 200gb
+
+SDCapValue07=234	-- Start of genuine 256gb
+SDCapValue08=240	-- End of genuine 256gb
+
+SDCapValue09=364	-- Start of genuine 400gb
+SDCapValue10=374	-- End of genuine 400gb
+
+SDCapValue11=471	-- Start of genuine 512gb
+SDCapValue12=479	-- End of genuine 512gb
+
+SDCapValue13=942	-- Start of genuine 1tb
+SDCapValue14=955	-- End of genuine 1tb

@@ -1,0 +1,65 @@
+--APP.LIST--
+
+Name1="Adrenaline + 661.PBP Firmware File"
+Link1="https://github.com/TheOfficialFloW/Adrenaline/releases/latest/download/Adrenaline.vpk"
+AppID1="PSPEMUCFW"
+
+Name2="Adrenaline Bubble Manager"
+Link2="https://github.com/ONElua/AdrenalineBubbleManager/releases/latest/download/AdrenalineBubbleManager.vpk"
+AppID2="ADRBUBMAN"
+
+Name3="AutoPlugin2"
+Link3="https://github.com/ONElua/AutoPlugin2/releases/latest/download/AutoPlugin2.vpk"
+AppID3="AUTOPLUG2"
+
+Name4="Custom Theme Manager"
+Link4="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/CTManager.vpk"
+AppID4="CTMANAGER"
+
+Name5="PKGj"
+Link5="https://github.com/blastrock/pkgj/releases/latest/download/pkgj.vpk"
+AppID5="PKGJ00000"
+
+Name6="UX0 to SD Clone Tool"
+Link6="https://github.com/AntHJ/UX0toSD/releases/latest/download/UX0toSD_v2.3.vpk"
+AppID6="ANTSCT001"
+
+Name7="Quick ReMounter"
+Link7="https://github.com/AntHJ/Quick-Remounter/releases/download/v1.0/QuickRemounter.vpk"
+AppID7="QRMNTTOOL"
+
+Name8="Is it Fake (SD Checker)"
+Link8="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/IsItFake.vpk"
+AppID8="ISITFAKE0"
+
+Name9="YAMT Installer/Remover"
+Link9="https://github.com/SKGleba/yamt-vita/releases/download/v4.0/yamt.vpk"
+AppID9="SKGYAMT01"
+
+Name10="Simple Account Switcher"
+Link10="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/SimpleAccountSwitcher.vpk"
+AppID10="ACCSWIT01"
+
+Name11="Button Swapper X/O"
+Link11="https://github.com/xyzz/vita-button-swapper/releases/download/1.0/button-swapper.vpk"
+AppID11="XYZZ00001"
+
+Name12="Hardware Tester"
+Link12="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/VitaTester.vpk"
+AppID12="VITATESTR"
+
+Name13="Disable 3G"
+Link13="https://github.com/KanadeEngel/PS-Vita/raw/master/3G_Disable/disable_3g.vpk"
+AppID13="DISABLE3G"
+
+Name14="AppLocker"
+Link14="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/AppLocker.vpk"
+AppID14="APPLOCKER"
+
+Name15="VitaDeploy"
+Link15="https://github.com/hackmyvita/hackmyvita.github.io/raw/main/hen/vdep.vpk"
+AppID15="SKGD3PL0Y"
+
+Name16="VitaShell"
+Link16="https://github.com/hackmyvita/hackmyvita.github.io/raw/main/vpk/shell.vpk"
+AppID16="VITASHELL"

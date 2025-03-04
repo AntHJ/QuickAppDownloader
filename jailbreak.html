@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect PlayStation Vita</title>
+</head>
+<body>
+    <h1>Device Detection</h1>
+    <p id="device-info">Detecting device...</p>
+
+    <script>
+        function detectPlayStationVita() {
+            var userAgent = navigator.userAgent;
+            var deviceInfo = document.getElementById("device-info");
+
+            if (userAgent.includes("PlayStation Vita")) {
+                deviceInfo.textContent = "You are using a PlayStation Vita!";
+                window.location.href = "https://jailbreak.psp2.dev";
+            } else {
+                deviceInfo.textContent = "You are not using a PlayStation Vita.";
+                window.location.href = "https://sites.google.com/view/psppsvitagroup/vita-pstv/guides";
+            }
+        }
+
+        detectPlayStationVita();
+    </script>
+</body>
+</html>

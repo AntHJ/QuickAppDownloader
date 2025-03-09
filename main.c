@@ -49,7 +49,7 @@
 
 #include "ops.c" // misc, too clogged otherwise
 
-#define REPO_URL "http://download.myhb.dev/VPKs/"
+#define REPO_URL "http://download.psvita.group/VPKs/"
 #define F661_URL "http://de01.psp.update.playstation.org/update/psp/image/eu/2014_1212_6be8878f475ac5b1a499b95ab2f7d301/"
 #define F661_FNAME "EBOOT.PBP"
 #define QAD_VPK_FNAME "Quick.App.Downloader.vpk"

@@ -1,7 +1,7 @@
 # Vita App Downloader
 This is a custom bootstrap based on an edited version of the HENlo jailbreak for Playstation Vita/TV for firmware 3.65+
 
-visit ```Download.MyHB.dev``` using the Playstation Vita/TV web browser to launch the install menu.
+visit ```Download.PSVita.group``` using the Playstation Vita/TV web browser to launch the install menu.
 
 * the App Downloader itself Utilises Lua Player Plus Vita (lpp-vita). [Learn more.](https://github.com/Rinnegatamante/lpp-vita)
 -----

@@ -28,9 +28,9 @@ Name7="Quick ReMounter"
 Link7="https://github.com/AntHJ/Quick-Remounter/releases/download/v1.0/QuickRemounter.vpk"
 AppID7="QRMNTTOOL"
 
-Name8="Is it Fake (SD Checker)"
-Link8="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/IsItFake.vpk"
-AppID8="ISITFAKE0"
+Name8="UpdateBlock (Remover)"
+Link8="https://github.com/AntHJ/QuickAppDownloader/raw/main/VPKs/UpdateBlocker.vpk"
+AppID8="UPDATBLOC"
 
 Name9="YAMT Installer/Remover"
 Link9="https://github.com/SKGleba/yamt-vita/releases/download/v4.0/yamt.vpk"

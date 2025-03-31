@@ -21,7 +21,7 @@ Link5="https://github.com/blastrock/pkgj/releases/latest/download/pkgj.vpk"
 AppID5="PKGJ00000"
 
 Name6="UX0 to SD Clone Tool"
-Link6="https://github.com/AntHJ/UX0toSD/releases/latest/download/UX0toSD_v2.3c.vpk"
+Link6="https://github.com/AntHJ/UX0toSD/releases/latest/download/UX0toSD_v2.3.vpk"
 AppID6="ANTSCT001"
 
 Name7="Quick ReMounter"

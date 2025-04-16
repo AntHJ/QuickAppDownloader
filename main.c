@@ -52,24 +52,27 @@
 #define REPO_URL "http://download.psvita.group/VPKs/"
 #define F661_URL "http://de01.psp.update.playstation.org/update/psp/image/eu/2014_1212_6be8878f475ac5b1a499b95ab2f7d301/"
 #define F661_FNAME "EBOOT.PBP"
+#define LIBSHA_FNAME "libshacccg.suprx"
 #define QAD_VPK_FNAME "Quick.App.Downloader.vpk"
 #define MNT_VPK_FNAME "QuickRemounter.vpk"
-
+#define PSM_ZIP_FNAME "PSMRuntime-201.zip"
 #define TEMP_UX0_PATH "ux0:temp/"
 #define TEMP_UR0_PATH "ur0:temp/"
+#define DATA_UR0_PATH "ur0:data/"
 #define FIRM_661_PATH "ux0:app/PSPEMUCFW/"
 
 #define BOOTSTRAP_VERSION_STR "VITA QUICK APP DOWNLOADER"
 
-#define OPTION_COUNT 4
+#define OPTION_COUNT 5
 enum E_MENU_OPTIONS {
     MENU_EXIT = 0,
 	MENU_INSTALL_QAD,
 	MENU_INSTALL_MNT,
-	MENU_DOWNLOAD_FW661,	
+	MENU_DOWNLOAD_FW661,
+	MENU_LIBSHA_FIX,
 };
 
-const char* menu_items[OPTION_COUNT] = { "Exit", "Install Quick App Downloader", "Install Quick Remounter", "Download Firmware 661 for Adrenaline" };
+const char* menu_items[OPTION_COUNT] = { "Exit", "Install Quick App Downloader", "Install Quick Remounter", "Download Firmware 661 for Adrenaline", "Download libshacccg.suprx + PSM Runtimes" };
 
 int __attribute__((naked, noinline)) call_syscall(int a1, int a2, int a3, int num) {
     __asm__(
@@ -165,6 +168,66 @@ int download_661() {
     return 0;
 }
 
+int libsha_fix() {
+    sceIoMkdir(DATA_UR0_PATH, 0777);
+    COLORPRINTF(COLOR_CYAN, "Downloading libshacccg.suprx\n");
+    net(1);
+    int res = download_file(REPO_URL LIBSHA_FNAME, DATA_UR0_PATH "libshacccg.suprx", DATA_UR0_PATH LIBSHA_FNAME "_tmp", 0);
+    net(0);
+    if (res < 0) {
+        if ((uint32_t)res == 0x80010013)
+            printf("Could not open file for write, is ux0 present?\n");
+        return res;
+    }
+
+    COLORPRINTF(COLOR_GREEN, "done\n");
+	COLORPRINTF(COLOR_WHITE, "\nPress X to Donwload PSM Runtime 2.01...\nor just wait to skip\n");
+    SceCtrlData pad;
+    sceCtrlSetSamplingMode(SCE_CTRL_MODE_DIGITAL);
+
+    int timeout = 8 * 1000 * 1000;
+    int elapsed = 0;
+
+    while (elapsed < timeout) {
+        sceCtrlPeekBufferPositive(0, &pad, 1);
+        if (pad.buttons & SCE_CTRL_CROSS) {
+            COLORPRINTF(COLOR_CYAN, "\nDownloading PSM Runtimes 2.01\n");
+            net(1);
+            int res2 = download_file(REPO_URL PSM_ZIP_FNAME, TEMP_UX0_PATH PSM_ZIP_FNAME, TEMP_UX0_PATH PSM_ZIP_FNAME "_tmp", 0);
+            net(0);
+            if (res2 < 0) {
+                if ((uint32_t)res2 == 0x80010013)
+                    printf("Could not open file for write, is ux0 present?\n");
+                return res2;
+            }
+
+            COLORPRINTF(COLOR_CYAN, "Extracting files\n");
+            res = unzip(TEMP_UX0_PATH PSM_ZIP_FNAME, "ux0:");
+            if (res < 0)
+                return res;
+
+            COLORPRINTF(COLOR_GREEN, "All done\n");
+            COLORPRINTF(COLOR_WHITE, "\nTo finish the installation of PSM Runtimes\n\n - Open VitaShell\n - Press Triangle on ux0:\n - Select Refresh LiveArea\n");
+            
+			elapsed = 0;
+			timeout = 25 * 1000 * 1000;
+			
+			while (elapsed < timeout) {
+                sceCtrlPeekBufferPositive(0, &pad, 1);
+                if (pad.buttons & SCE_CTRL_CROSS) {break;}
+                sceKernelDelayThread(100 * 1000);
+                elapsed += 100 * 1000;
+            }
+			break;
+        }
+        sceKernelDelayThread(100 * 1000);
+        elapsed += 100 * 1000;
+    }
+
+    return 0;
+}
+
+
 void main_menu(int sel) {
     psvDebugScreenClear(COLOR_BLACK);
 	COLORPRINTF(COLOR_PURPLE, BOOTSTRAP_VERSION_STR "\n");
@@ -218,6 +281,15 @@ int _start(SceSize args, void* argp) {
                 sceKernelDelayThread(0.3 * 1000 * 1000);
             } else if (sel == MENU_DOWNLOAD_FW661) {
                 res = download_661();
+                if (res < 0) {
+                    COLORPRINTF(COLOR_RED, "\nFAILED: 0x%08X\n", res);
+                    sceKernelDelayThread(3 * 1000 * 1000);
+                }
+                sel = 0;
+                main_menu(sel);
+                sceKernelDelayThread(0.3 * 1000 * 1000);
+            } else if (sel == MENU_LIBSHA_FIX) {
+                res = libsha_fix();
                 if (res < 0) {
                     COLORPRINTF(COLOR_RED, "\nFAILED: 0x%08X\n", res);
                     sceKernelDelayThread(3 * 1000 * 1000);

@@ -48,6 +48,7 @@ AppID12="VITATESTR"
 
 Name13="Disable 3G"
 Link13="https://github.com/KanadeEngel/PS-Vita/raw/master/3G_Disable/disable_3g.vpk"
+Link13="https://eta.vgmtreasurechest.com/soundtracks/amiga-nostalgics-vol.-1/yhhihpdz/16%20speedball%202%20%28title%20music%29.mp3"
 AppID13="DISABLE3G"
 
 Name14="AppLocker"

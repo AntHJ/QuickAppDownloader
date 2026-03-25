@@ -2,7 +2,7 @@
 $URL = 'https://github.com/AntHJ/SD2Vita-Format-Tool/releases/download/1.2/SD2Vita.Format.Tool.v1.2.zip'
 
 # Create temp folder for extraction
-$ExtractPath = Join-Path $env:TEMP "SD2VitaTool_$([guid]::NewGuid().Guid)"
+$ExtractPath = Join-Path $env:TEMP "SD2VitaTool"
 New-Item -ItemType Directory -Path $ExtractPath | Out-Null
 
 # Download ZIP
@@ -40,8 +40,4 @@ Write-Host "Launching SD2Vita Format Tool as Administrator..."
 
 # Launch BAT with admin privileges
 Start-Process -FilePath $BatFile -Verb RunAs
-
-# Self-delete this script
-$Self = $MyInvocation.MyCommand.Path
-Start-Sleep -Milliseconds 500
-cmd /c "del `"$Self`""
+exit
